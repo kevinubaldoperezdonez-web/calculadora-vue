@@ -89,18 +89,30 @@ if (formulario) {
                 body: JSON.stringify(datos)
             });
 
-            const resultado = await respuesta.json();
-
-            if (!respuesta.ok) {
-                throw new Error(resultado.mensaje || "No se pudo guardar el registro.");
+            if (respuesta.ok) {
+                const resultado = await respuesta.json();
+                mensaje.textContent = resultado.mensaje || "Registro guardado correctamente.";
+                mensaje.style.color = "green";
+                formulario.reset();
+                return;
             }
 
-            mensaje.textContent = resultado.mensaje || "Registro guardado correctamente.";
+            throw new Error("API no disponible");
+        } catch (error) {
+            const registrosLocales = JSON.parse(localStorage.getItem("alumnosRegistroVue") || "[]");
+            const curp = String(datos.curp || "").trim().toLowerCase();
+
+            if (registrosLocales.some(alumno => String(alumno.curp || "").toLowerCase() === curp)) {
+                mensaje.textContent = "La CURP ya está registrada.";
+                mensaje.style.color = "red";
+                return;
+            }
+
+            registrosLocales.push(datos);
+            localStorage.setItem("alumnosRegistroVue", JSON.stringify(registrosLocales));
+            mensaje.textContent = "Registro guardado correctamente en este navegador.";
             mensaje.style.color = "green";
             formulario.reset();
-        } catch (error) {
-            mensaje.textContent = error.message || "No se pudo guardar el registro.";
-            mensaje.style.color = "red";
         }
     });
 }

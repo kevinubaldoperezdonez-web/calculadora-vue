@@ -72,9 +72,12 @@ const app = Vue.createApp({
                 this.alumnos = datos
                 this.mensaje = `Se encontraron ${datos.length} registros`
             } catch (error) {
-                this.alumnos = []
-                this.error = true
-                this.mensaje = error.message
+                const registrosLocales = JSON.parse(localStorage.getItem("alumnosRegistroVue") || "[]")
+                this.alumnos = registrosLocales
+                this.error = false
+                this.mensaje = registrosLocales.length
+                    ? `Se encontraron ${registrosLocales.length} registros locales`
+                    : "No hay registros locales. Usa el formulario para agregar uno."
             }
         },
         async guardarAlumno() {
@@ -90,45 +93,58 @@ const app = Vue.createApp({
                     body: JSON.stringify(this.nuevoAlumno)
                 })
 
-                const resultado = await respuesta.json()
-
-                if (!respuesta.ok) {
-                    throw new Error(resultado.mensaje || "No se pudo guardar el registro")
+                if (respuesta.ok) {
+                    const resultado = await respuesta.json()
+                    this.mensajeRegistro = resultado.mensaje || "Registro guardado correctamente"
+                } else {
+                    throw new Error("API no disponible")
                 }
 
-                this.mensajeRegistro = resultado.mensaje || "Registro guardado correctamente"
-                this.nuevoAlumno = {
-                    nombre: "",
-                    apellidos: "",
-                    curp: "",
-                    telefono: "",
-                    correo: "",
-                    secundaria: "",
-                    especialidad: "",
-                    carrera: "",
-                    turno: "",
-                    sexo: "",
-                    fechaNacimiento: "",
-                    entidadSecundaria: "",
-                    anioSecundaria: "",
-                    promedioSecundaria: "",
-                    nombreTutor: "",
-                    telefono1: "",
-                    telefono2: "",
-                    calle: "",
-                    numero: "",
-                    colonia: "",
-                    codigoPostal: "",
-                    delegacionMunicipio: "",
-                    entidadFederativa: "",
-                    ciudad: "",
-                    fechaExamen: "",
-                    horaExamen: ""
-                }
                 await this.cargarAlumnos()
             } catch (error) {
-                this.error = true
-                this.mensajeRegistro = error.message
+                const registrosLocales = JSON.parse(localStorage.getItem("alumnosRegistroVue") || "[]")
+                const curp = (this.nuevoAlumno.curp || "").trim().toLowerCase()
+
+                if (registrosLocales.some(alumno => (alumno.curp || "").toLowerCase() === curp)) {
+                    this.error = true
+                    this.mensajeRegistro = "La CURP ya está registrada"
+                    return
+                }
+
+                registrosLocales.push({ ...this.nuevoAlumno })
+                localStorage.setItem("alumnosRegistroVue", JSON.stringify(registrosLocales))
+                this.mensajeRegistro = "Registro guardado correctamente en este navegador"
+                this.error = false
+                await this.cargarAlumnos()
+            }
+
+            this.nuevoAlumno = {
+                nombre: "",
+                apellidos: "",
+                curp: "",
+                telefono: "",
+                correo: "",
+                secundaria: "",
+                especialidad: "",
+                carrera: "",
+                turno: "",
+                sexo: "",
+                fechaNacimiento: "",
+                entidadSecundaria: "",
+                anioSecundaria: "",
+                promedioSecundaria: "",
+                nombreTutor: "",
+                telefono1: "",
+                telefono2: "",
+                calle: "",
+                numero: "",
+                colonia: "",
+                codigoPostal: "",
+                delegacionMunicipio: "",
+                entidadFederativa: "",
+                ciudad: "",
+                fechaExamen: "",
+                horaExamen: ""
             }
         },
     },
