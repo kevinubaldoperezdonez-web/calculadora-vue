@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Calculadora con Vue</h1>
+
+        <label>
+            Primer número:
+            <input type="number" v-model.number="numero1">
+        </label>
+
+        <br><br>
+
+        <label>
+            Segundo número:
+            <input type="number" v-model.number="numero2">
+        </label>
+
+        <br><br>
+
+        <button v-on:click="sumar">SUMAR</button>
+        <button v-on:click="restar">restar</button>
+        <button v-on:click="dividir">dividir</button>
+        <button v-on:click="multiplicar">multiplicar</button>
+        <button v-on:click="raizCuadrada">raiz cuadrada</button>
+        <button v-on:click="potencia">potencia</button>
+
+        <h2>Resultado: {{ resultado }}</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <script src="./JS/calculadora.js"></script>
+</body>
+</html>
