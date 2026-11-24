@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Preinscripción</title>
+    <link rel="stylesheet" href="estilo1.css">
+</head>
+<body>
+    <header>
+        <h1>preinscripción escolar</h1>
+    </header>
+    <nav>
+        <a href="reinscripcion.html">Formulario</a>
+        <a href="registrovue.html">Consultar registros</a>
+    </nav>
+    <main>
+        <h2>Registro de alumno</h2>
+        <form id="formularioAlumno" novalidate>
+            <section class="grupo-campos">
+                <h3>Datos del alumno</h3>
+                <label>
+                    Nombre
+                    <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+                </label>
+                <label>
+                    Apellidos
+                    <input type="text" name="apellidos" placeholder="Escribe tus apellidos" required>
+                </label>
+                <label>
+                    CURP
+                    <input type="text" name="curp" placeholder="Ej. ABCD980101HDF" required>
+                </label>
+                <label>
+                    Teléfono
+                    <input type="text" name="telefono" placeholder="Ej. 5512345678" required>
+                </label>
+                <label>
+                    Correo
+                    <input type="text" name="correo" placeholder="Ej. alumno@correo.com" required>
+                </label>
+                <label>
+                    Secundaria
+                    <input type="text" name="secundaria" placeholder="Nombre de tu secundaria" required>
+                </label>
+                <label>
+                    Especialidad
+                    <input type="text" name="especialidad" placeholder="Ej. Informática" required>
+                </label>
+                <label>
+                    Carrera
+                    <select name="carrera" required>
+                        <option value="">Selecciona una carrera</option>
+                        <option value="Carrera 1">Carrera 1</option>
+                        <option value="Carrera 2">Carrera 2</option>
+                        <option value="Carrera 3">Carrera 3</option>
+                    </select>
+                </label>
+                <label>
+                    Turno solicitado
+                    <select name="turno" required>
+                        <option value="">Selecciona un turno</option>
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                    </select>
+                </label>
+                <label>
+                    Sexo
+                    <select name="sexo" required>
+                        <option value="">Selecciona tu sexo</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </label>
+                <label>
+                    Fecha de nacimiento
+                    <input type="date" name="fechaNacimiento" required>
+                </label>
+                <label>
+                    Entidad de la secundaria
+                    <select name="entidadSecundaria" required>
+                        <option value="">Selecciona un estado</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Coahuila">Coahuila</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Estado de México">Estado de México</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Michoacán">Michoacán</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz">Veracruz</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+                </label>
+                <label>
+                    Año en que concluyó la secundaria
+                    <input type="number" name="anioSecundaria" min="2000" max="2035" placeholder="Ej. 2024" required>
+                </label>
+                <label>
+                    Promedio de secundaria
+                    <input type="number" name="promedioSecundaria" min="0" max="10" step="0.1" placeholder="Ej. 9.5" required>
+                </label>
+            </section>
+
+            <section class="grupo-campos">
+                <h3>Datos del tutor o padre</h3>
+                <label>
+                    Nombre del padre o tutor de la(s)
+                    <input type="text" name="nombreTutor" placeholder="Ej. Juan García" required>
+                </label>
+                <label>
+                    Teléfono 1
+                    <input type="text" name="telefono1" placeholder="Ej. 5512345678" required>
+                </label>
+                <label>
+                    Teléfono 2
+                    <input type="text" name="telefono2" placeholder="Ej. 5512345678" required>
+                </label>
+            </section>
+
+            <section class="grupo-campos">
+                <h3>Domicilio</h3>
+                <label>
+                    Calle
+                    <input type="text" name="calle" placeholder="Ej. Av. México" required>
+                </label>
+                <label>
+                    Número
+                    <input type="text" name="numero" placeholder="Ej. 245" required>
+                </label>
+                <label>
+                    Colonia
+                    <input type="text" name="colonia" placeholder="Ej. Centro" required>
+                </label>
+                <label>
+                    Código postal
+                    <input type="text" name="codigoPostal" placeholder="Ej. 44100" required>
+                </label>
+                <label>
+                    Delegación o municipio
+                    <input type="text" name="delegacionMunicipio" placeholder="Ej. Guadalajara" required>
+                </label>
+                <label>
+                    Entidad federativa
+                    <select name="entidadFederativa" required>
+                        <option value="">Selecciona un estado</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Coahuila">Coahuila</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Estado de México">Estado de México</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Michoacán">Michoacán</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz">Veracruz</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+                </label>
+                <label>
+                    Ciudad
+                    <input type="text" name="ciudad" placeholder="Ej. Guadalajara" required>
+                </label>
+            </section>
+            <label>
+                Fecha del examen
+                <input type="date" name="fechaExamen" required>
+            </label>
+            <label>
+                Hora del examen
+                <input type="time" name="horaExamen" required>
+            </label>
+            <button type="submit">Guardar registro</button>
+        </form>
+        <p id="mensaje"></p>
+    </main>
+    <script src="formulario.js"></script>
+</body>
+</html>

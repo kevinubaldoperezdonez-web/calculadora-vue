@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación Docente Anónima</title>
+  <link rel="stylesheet" href="/css/pagina.css">
+</head>
+<body>
+
+  <header class="privacy-banner">
+    <span class="shield-icon">🔒</span>
+    <span><strong>100% Anónimo:</strong> No se recopila tu nombre, matrícula, correo ni dirección IP.</span>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button class="tab-btn active" type="button" data-tab="evaluar">Realizar Evaluación</button>
+    </nav>
+
+    <!-- SECCIÓN: EVALUAR -->
+    <section id="tab-evaluar" class="tab-content active">
+      <!-- Paso 1: Datos académicos (sin identidad) -->
+      <div class="card">
+        <h2>1. Contexto Académico</h2>
+        <p class="subtitle">Selecciona únicamente tu semestre y especialidad para cargar a tus docentes.</p>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="semestre">Semestre de la carrera *</label>
+            <select id="semestre" required>
+              <option value="">-- Selecciona semestre --</option>
+              <option value="1">1° Semestre</option>
+              <option value="2">2° Semestre</option>
+              <option value="3">3° Semestre</option>
+              <option value="4">4° Semestre</option>
+              <option value="5">5° Semestre</option>
+              <option value="6">6° Semestre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="especialidad">Especialidad *</label>
+            <select id="especialidad" required>
+              <option value="">-- Selecciona especialidad --</option>
+              <option value="Enfermería General">Enfermería General</option>
+              <option value="Contabilidad">Contabilidad</option>
+              <option value="Recursos Humanos">Recursos Humanos</option>
+              <option value="Programación">Programación</option>
+              <option value="Mantenimiento">Mantenimiento</option>
+              <option value="Robótica y Automatización">Robótica y Automatización</option>
+              <option value="Inteligencia de Negocios">Inteligencia de Negocios</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2: Selección de Docente -->
+      <div id="panel-docentes" class="card hidden">
+        <div class="card-header-flex">
+          <div>
+            <h2>2. Selecciona un Docente a Evaluar</h2>
+            <p class="subtitle">Puedes evaluar a varios profesores de tu especialidad en esta misma sesión.</p>
+          </div>
+          <span id="progreso-badge" class="badge">0 evaluados</span>
+        </div>
+
+        <div id="lista-docentes" class="docentes-grid"></div>
+
+        <div class="add-docente-box">
+          <input type="text" id="nuevo-docente-nombre" placeholder="¿Falta algún profesor? Escribe su nombre y materia...">
+          <button type="button" id="btn-agregar-docente" class="btn-secondary">+ Agregar Docente</button>
+        </div>
+      </div>
+
+      <!-- Paso 3: Cuestionario de Opción Múltiple -->
+      <form id="form-cuestionario" class="card hidden">
+        <div class="cuestionario-header">
+          <div>
+            <span class="tag-anonimo">Evaluación Anónima Activa</span>
+            <h2 id="titulo-docente-actual">Evaluando a: ---</h2>
+            <p id="subtitulo-docente-actual" class="subtitle"></p>
+          </div>
+          <button type="button" id="btn-cancelar-eval" class="btn-text">Cambiar docente</button>
+        </div>
+
+        <div id="preguntas-container"></div>
+
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label for="comentario">Comentarios o sugerencias (Opcional y anónimo)</label>
+          <textarea id="comentario" rows="3" placeholder="Escribe retroalimentación constructiva sin incluir tus datos personales..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Enviar Evaluación Anónima</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/JS/pagina.js"></script>
+</body>
+</html>

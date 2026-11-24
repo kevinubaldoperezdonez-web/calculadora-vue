@@ -1,0 +1,78 @@
+
+/* Midnight Aurora */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(ellipse at 20% 20%, #29205e 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 80%, #153d55 0%, transparent 45%),
+        #080d1b;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -4px;
+    text-align: center;
+    line-height: 1.1;
+
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #b9a5ff,
+        #70dfff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    margin-bottom: 25px;
+}
+
+p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #a9b4d0;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* Animación de entrada */
+
+h1, p {
+    animation: appear 1.2s ease both;
+}
+
+p {
+    animation-delay: 0.2s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

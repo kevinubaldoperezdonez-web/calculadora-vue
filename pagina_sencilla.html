@@ -1,0 +1,250 @@
+gf<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de las tecnologías digitales</title>
+  <style>
+    :root {
+      --bg: #f4f7ff;
+      --card: #ffffff;
+      --primary: #4f46e5;
+      --primary-dark: #312e81;
+      --accent: #f59e0b;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 18px 45px rgba(79, 70, 229, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef4ff 0%, #f9fafb 100%);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 50px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: center;
+      background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(79, 70, 229, 0.12);
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1, h2 {
+      color: var(--text);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 15px 30px rgba(17, 24, 39, 0.15);
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+      align-items: center;
+    }
+
+    .card.reverse {
+      grid-template-columns: 1.05fr 1fr;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .card h2 {
+      font-size: 1.55rem;
+      margin-bottom: 8px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .card ul {
+      margin: 12px 0 0 18px;
+      padding: 0;
+    }
+
+    .card li + li {
+      margin-top: 8px;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding: 22px 16px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      .hero, .card, .card.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 20px;
+      }
+
+      .hero img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="hero">
+      <div>
+        <span class="hero-badge">Tecnología y vida digital</span>
+        <h1>Uso de las tecnologías digitales</h1>
+        <p>Las herramientas digitales nos conectan, nos informan y nos ayudan a aprender, pero también requieren responsabilidad y criterio para usarlas de forma saludable.</p>
+      </div>
+      <img src="./imagenesdeproyectos/mamada1.png" alt="Personas usando tecnología">
+    </header>
+
+    <main class="card-grid">
+      <section class="card">
+        <div>
+          <h2>¿Qué son?</h2>
+          <p>Las tecnologías digitales forman parte de nuestra vida diaria. Nos permiten comunicarnos, aprender, buscar información y entretenernos.</p>
+        </div>
+        <img src="./imagenesdeproyectos/mamada2.png" alt="Tecnología y personas trabajando">
+      </section>
+
+      <section class="card reverse">
+        <img src="./imagenesdeproyectos/mamada3.png" alt="Redes sociales">
+        <div>
+          <h2>Redes sociales</h2>
+          <p>Las redes sociales nos ayudan a compartir contenido y comunicarnos con otras personas. Sin embargo, es importante usarlas con responsabilidad.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div>
+          <h2>Algoritmos</h2>
+          <p>Son sistemas que seleccionan qué contenido aparece en nuestras redes según nuestros intereses y actividad.</p>
+        </div>
+        <img src="./imagenesdeproyectos/mamada1.png" alt="Algoritmos y datos">
+      </section>
+
+      <section class="card reverse">
+        <img src="./imagenesdeproyectos/mamada2.png" alt="Persona usando celular en scroll infinito">
+        <div>
+          <h2>Scroll infinito</h2>
+          <p>Es una función que permite seguir viendo publicaciones sin cambiar de página. Puede hacer que pasemos más tiempo del que pensamos en internet.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div>
+          <h2>Burbujas de información</h2>
+          <p>Ocurren cuando vemos principalmente contenido parecido a nuestras ideas e intereses, por lo que conocemos menos opiniones diferentes.</p>
+        </div>
+        <img src="./imagenesdeproyectos/mamada3.png" alt="Personas con información digital">
+      </section>
+
+      <section class="card reverse">
+        <img src="./imagenesdeproyectos/mamada1.png" alt="Likes y seguidores">
+        <div>
+          <h2>Likes y seguidores</h2>
+          <p>Los likes y seguidores pueden influir en cómo nos sentimos. No debemos medir nuestro valor por la aprobación que recibimos en internet.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div>
+          <h2>Inteligencia artificial</h2>
+          <p>La inteligencia artificial puede ayudarnos a encontrar información y resolver dudas, pero sus respuestas pueden contener errores. Siempre debemos comprobar la información.</p>
+        </div>
+        <img src="./imagenesdeproyectos/mamada2.png" alt="Inteligencia artificial">
+      </section>
+
+      <section class="card reverse">
+        <img src="./imagenesdeproyectos/mamada3.png" alt="Uso responsable de tecnología">
+        <div>
+          <h2>Uso responsable</h2>
+          <ul>
+            <li>Proteger nuestros datos personales.</li>
+            <li>Respetar a los demás en internet.</li>
+            <li>Verificar la información antes de compartirla.</li>
+            <li>Tomar descansos de las pantallas.</li>
+            <li>Pedir ayuda si algo en internet nos hace sentir incómodos.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Uso responsable de las tecnologías digitales</p>
+    </footer>
+  </div>
+
+</body>
+</html>

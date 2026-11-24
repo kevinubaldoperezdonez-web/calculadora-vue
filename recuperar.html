@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consultar registros</title>
+    <link rel="stylesheet" href="estilo1.css">
+
+</head>
+<body>
+    <header>
+        <h1>registros de preinscripcion</h1>
+    </header>
+    <nav>
+        <a href="reinscripcion.html">formulario</a>
+        <a href="registrovue.html">consultar registros</a>
+    </nav>
+    <main>
+        <h2>alumnos registrados</h2>
+        <input type="search" id="busqueda" placeholder="buscar por nombre o curp">
+        <div class="tabla">
+ww            <table>
+                <thead>
+                    <tr>
+                        <th>nombre</th>
+                        <th>apellidos</th>
+                        <th>curp</th>
+                        <th>telefono</th>
+                        <th>correo</th>
+                        <th>secundaria</th>
+                        <th>especialidad</th>
+                        <th>carrera</th>
+                        <th>turno</th>
+                        <th>sexo</th>
+                        <th>fecha de nacimiento</th>
+                        <th>entidad de la secundaria</th>
+                        <th>año de conclusión</th>
+                        <th>promedio de secundaria</th>
+                        <th>nombre del tutor</th>
+                        <th>teléfono 1</th>
+                        <th>teléfono 2</th>
+                        <th>calle</th>
+                        <th>número</th>
+                        <th>colonia</th>
+                        <th>código postal</th>
+                        <th>delegación o municipio</th>
+                        <th>entidad federativa</th>
+                        <th>ciudad</th>
+                        <th>fecha del examen</th>
+                        <th>hora del examen</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla"></tbody>
+            </table>
+        </div>
+        <p id="mensaje"></p>
+    </main>
+
+</body>
+<script src="recuperar.js"></script>
+</html>

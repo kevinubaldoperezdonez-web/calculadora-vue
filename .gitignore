@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+
+# Bases de datos locales
+*.db
+
+# Cachés y ejecutables temporales
+__pycache__/
+*.pyc
+node_modules/
+
+# Archivos locales
+.env

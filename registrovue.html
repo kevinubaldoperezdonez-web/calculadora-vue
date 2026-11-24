@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar registros | Vue</title>
+    <link rel="stylesheet" href="estilo1.css">
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Registros de preinscripción</h1>
+        </header>
+
+        <nav>
+            <a href="reinscripcion.html">Formulario</a>
+            <a href="registrovue.html">Consultar registros</a>
+        </nav>
+
+        <main>
+            <h2>Registrar alumno</h2>
+            <form class="grupo-campos" @submit.prevent="guardarAlumno">
+                <label>Nombre<input v-model="nuevoAlumno.nombre" required></label>
+                <label>Apellidos<input v-model="nuevoAlumno.apellidos" required></label>
+                <label>CURP<input v-model="nuevoAlumno.curp" minlength="18" maxlength="18" required></label>
+                <label>Teléfono<input v-model="nuevoAlumno.telefono" minlength="10" required></label>
+                <label>Correo<input v-model="nuevoAlumno.correo" type="email" required></label>
+                <label>Secundaria<input v-model="nuevoAlumno.secundaria" required></label>
+                <label>Especialidad<input v-model="nuevoAlumno.especialidad" required></label>
+                <label>Carrera
+                    <select v-model="nuevoAlumno.carrera" required>
+                        <option value="">Selecciona una carrera</option>
+                        <option value="Carrera 1">Carrera 1</option>
+                        <option value="Carrera 2">Carrera 2</option>
+                        <option value="Carrera 3">Carrera 3</option>
+                    </select>
+                </label>
+                <label>Turno
+                    <select v-model="nuevoAlumno.turno" required>
+                        <option value="">Selecciona un turno</option>
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                    </select>
+                </label>
+                <label>Sexo
+                    <select v-model="nuevoAlumno.sexo" required>
+                        <option value="">Selecciona el sexo</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </label>
+                <label>Fecha de nacimiento<input v-model="nuevoAlumno.fechaNacimiento" type="date" required></label>
+                <label>Entidad de la secundaria<input v-model="nuevoAlumno.entidadSecundaria" required></label>
+                <label>Año de conclusión<input v-model="nuevoAlumno.anioSecundaria" type="number" min="2000" max="2035" required></label>
+                <label>Promedio de secundaria<input v-model="nuevoAlumno.promedioSecundaria" type="number" min="0" max="10" step="0.1" required></label>
+                <label>Nombre del tutor<input v-model="nuevoAlumno.nombreTutor" required></label>
+                <label>Teléfono 1<input v-model="nuevoAlumno.telefono1" minlength="10" required></label>
+                <label>Teléfono 2<input v-model="nuevoAlumno.telefono2" minlength="10" required></label>
+                <label>Calle<input v-model="nuevoAlumno.calle" required></label>
+                <label>Número<input v-model="nuevoAlumno.numero" required></label>
+                <label>Colonia<input v-model="nuevoAlumno.colonia" required></label>
+                <label>Código postal<input v-model="nuevoAlumno.codigoPostal" minlength="5" required></label>
+                <label>Delegación o municipio<input v-model="nuevoAlumno.delegacionMunicipio" required></label>
+                <label>Entidad federativa<input v-model="nuevoAlumno.entidadFederativa" required></label>
+                <label>Ciudad<input v-model="nuevoAlumno.ciudad" required></label>
+                <label>Fecha del examen<input v-model="nuevoAlumno.fechaExamen" type="date" required></label>
+                <label>Hora del examen<input v-model="nuevoAlumno.horaExamen" type="time" required></label>
+                <button type="submit">Guardar registro</button>
+            </form>
+
+            <p id="mensaje-registro" :style="{ color: error ? 'red' : 'green' }">
+                {{ mensajeRegistro }}
+            </p>
+
+            <h2>Alumnos registrados</h2>
+
+            <input
+                type="search"
+                id="busqueda"
+                v-model="busqueda"
+                placeholder="Buscar por nombre o CURP"
+            >
+
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>CURP</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Secundaria</th>
+                            <th>Especialidad</th>
+                            <th>Carrera</th>
+                            <th>Turno</th>
+                            <th>Sexo</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Entidad de la secundaria</th>
+                            <th>Año de conclusión</th>
+                            <th>Promedio de secundaria</th>
+                            <th>Nombre del tutor</th>
+                            <th>Teléfono 1</th>
+                            <th>Teléfono 2</th>
+                            <th>Calle</th>
+                            <th>Número</th>
+                            <th>Colonia</th>
+                            <th>Código postal</th>
+                            <th>Delegación o municipio</th>
+                            <th>Entidad federativa</th>
+                            <th>Ciudad</th>
+                            <th>Fecha del examen</th>
+                            <th>Hora del examen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(alumno, index) in alumnosFiltrados" :key="index">
+                            <td>{{ alumno.nombre || '-' }}</td>
+                            <td>{{ alumno.apellidos || '-' }}</td>
+                            <td>{{ alumno.curp || '-' }}</td>
+                            <td>{{ alumno.telefono || '-' }}</td>
+                            <td>{{ alumno.correo || '-' }}</td>
+                            <td>{{ alumno.secundaria || '-' }}</td>
+                            <td>{{ alumno.especialidad || '-' }}</td>
+                            <td>{{ alumno.carrera || '-' }}</td>
+                            <td>{{ alumno.turno || '-' }}</td>
+                            <td>{{ alumno.sexo || '-' }}</td>
+                            <td>{{ alumno.fechaNacimiento || '-' }}</td>
+                            <td>{{ alumno.entidadSecundaria || '-' }}</td>
+                            <td>{{ alumno.anioSecundaria || '-' }}</td>
+                            <td>{{ alumno.promedioSecundaria || '-' }}</td>
+                            <td>{{ alumno.nombreTutor || '-' }}</td>
+                            <td>{{ alumno.telefono1 || '-' }}</td>
+                            <td>{{ alumno.telefono2 || '-' }}</td>
+                            <td>{{ alumno.calle || '-' }}</td>
+                            <td>{{ alumno.numero || '-' }}</td>
+                            <td>{{ alumno.colonia || '-' }}</td>
+                            <td>{{ alumno.codigoPostal || '-' }}</td>
+                            <td>{{ alumno.delegacionMunicipio || '-' }}</td>
+                            <td>{{ alumno.entidadFederativa || '-' }}</td>
+                            <td>{{ alumno.ciudad || '-' }}</td>
+                            <td>{{ alumno.fechaExamen || '-' }}</td>
+                            <td>{{ alumno.horaExamen || '-' }}</td>
+                        </tr>
+                        <tr v-if="alumnosFiltrados.length === 0">
+                            <td colspan="26">No hay registros que coincidan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="mensaje" :style="{ color: error ? 'red' : '#333' }">
+                {{ mensaje }}
+            </p>
+        </main>
+    </div>
+
+    <script src="JS/vuerestro.js"></script>
+</body>
+</html>

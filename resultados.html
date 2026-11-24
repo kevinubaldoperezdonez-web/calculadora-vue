@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de Evaluaciones</title>
+  <link rel="stylesheet" href="/css/pagina.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="card-header-flex">
+        <div>
+          <h1>Resultados de Evaluaciones</h1>
+          <p class="subtitle">Promedios acumulados de las encuestas anónimas.</p>
+        </div>
+      </div>
+
+      <div class="form-grid" style="margin-bottom:1.5rem">
+        <div class="form-group">
+          <label for="filtro-especialidad">Filtrar por Especialidad</label>
+          <select id="filtro-especialidad">
+            <option value="TODAS">Todas las especialidades</option>
+            <option value="Enfermería General">Enfermería General</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Programación">Programación</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Robótica y Automatización">Robótica y Automatización</option>
+            <option value="Inteligencia de Negocios">Inteligencia de Negocios</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="filtro-semestre">Filtrar por Semestre</label>
+          <select id="filtro-semestre">
+            <option value="TODOS">Todos los semestres</option>
+            <option value="1">1° Semestre</option>
+            <option value="2">2° Semestre</option>
+            <option value="3">3° Semestre</option>
+            <option value="4">4° Semestre</option>
+            <option value="5">5° Semestre</option>
+            <option value="6">6° Semestre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="filtro-docente">Filtrar por Docente</label>
+          <select id="filtro-docente">
+            <option value="TODOS">Todos los docentes</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="total-evaluaciones" class="subtitle"></p>
+      <div id="contenedor-resultados" class="resultados-grid"></div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/JS/resultados.js"></script>
+</body>
+</html>

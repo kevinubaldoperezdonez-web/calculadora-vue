@@ -1,0 +1,20 @@
+{
+  "name": "recuperar-registros-vue",
+  "version": "1.0.0",
+  "description": "A Vue.js project for managing student registration records.",
+  "main": "src/main.ts",
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "vite": "^2.0.0"
+  },
+  "license": "MIT"
+}

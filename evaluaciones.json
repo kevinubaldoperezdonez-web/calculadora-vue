@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1795447211030-ciupci14",
+    "docenteId": "doc-1",
+    "docenteNombre": "Dra. Laura Méndez",
+    "materia": "Metodología de la Investigación",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "empanada",
+    "fecha": "2026-11-23T15:20:11.030Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448690176-71w3mda0",
+    "docenteId": "doc-2",
+    "docenteNombre": "Ing. Alejandro Soto",
+    "materia": "Cómputo y Programación Básica",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "hallaba",
+    "fecha": "2026-11-23T15:44:50.176Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448703638-2a5xlk19",
+    "docenteId": "doc-3",
+    "docenteNombre": "C.P. Roberto Silva",
+    "materia": "Administración y Economía",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "papya",
+    "fecha": "2026-11-23T15:45:03.638Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448775075-9w9zuy5o",
+    "docenteId": "doc-4",
+    "docenteNombre": "Mtra. Sofía Torres",
+    "materia": "Ética y Valores",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "jnjnnjn",
+    "fecha": "2026-11-23T15:46:15.075Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448785994-asytdv02",
+    "docenteId": "doc-5",
+    "docenteNombre": "Ing. Jorge Domínguez",
+    "materia": "Física y Matemáticas",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "bhbhbhb",
+    "fecha": "2026-11-23T15:46:25.994Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448796290-vfktfcwx",
+    "docenteId": "doc-6",
+    "docenteNombre": "Lic. Mariana Castro",
+    "materia": "Desarrollo Humano",
+    "semestre": "5",
+    "especialidad": "Programación",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "papaya",
+    "fecha": "2026-11-23T15:46:36.290Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  },
+  {
+    "id": "1795448832415-iz6zglh4",
+    "docenteId": "doc-1",
+    "docenteNombre": "Dra. Laura Méndez",
+    "materia": "Metodología de la Investigación",
+    "semestre": "2",
+    "especialidad": "Recursos Humanos",
+    "respuestas": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "promedio": 1,
+    "comentario": "empanada",
+    "fecha": "2026-11-23T15:47:12.415Z",
+    "submissionId": "1e02a6be-cec1-46e2-adf8-bbae74df8b2a"
+  }
+]
